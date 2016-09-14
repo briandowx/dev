@@ -1,0 +1,114 @@
+<!--
+//Copyright (c) 2008, Mark Sivill, Sales Engineering, Salesforce.com Inc.
+//All rights reserved.
+//
+//Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+//Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 
+//Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+//Neither the name of the salesforce.com nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. 
+//THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+//INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+//SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+//LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+//CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+//EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+//
+// History
+//
+// Version		Date			Author			Comments
+// 1.0.0		06-11-2008		Mark Sivill		Initial version
+// 1.1.0		20-03-2009		Mark Sivill		Add warning if multi-currency is on, changed record exceeded issues
+// 1.2.0		05-04-2009		Mark Sivill		Add support for multi-currency
+//
+-->
+
+<apex:page controller="SalesPipelineFunnelController" title="Sales Funnel">
+
+<apex:sectionHeader title="Sales Funnel" subtitle="Details for current and next quarters"></apex:sectionHeader>
+
+<apex:outputPanel rendered="{!isMultiCurrencyOrg}">
+	<apex:pageBlock title="Multi-currency detected">
+		<apex:outputText value="All amounts are reported with the corporate currency ({!CorporateCurrencyCode}) using current currency conversions"></apex:outputText>
+	</apex:pageBlock>
+</apex:outputPanel>
+
+<apex:pageBlock title="Current Quarter">
+
+<apex:outputPanel rendered="{!currentQuarterCountExceeded}">
+<p>
+<apex:outputText value="Too many opportunity records to process for current quarter"></apex:outputText>
+</p>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!NOT(currentQuarterCountExceeded)}">
+
+<apex:pageBlockSection title="Amount" columns="4">
+
+<!-- current open amount sales funnel -->
+	<apex:outputText style="font-weight:bold" value="Pipeline / Funnel"></apex:outputText>
+	<apex:flash width="250" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Funnel.swf')}?chartWidth=250&chartHeight=350" flashvars="&dataXML={!fusionChartsCurrentOpenOppTotalsAmountFunnelXML}"></apex:flash>
+
+<!-- current closed amount doughnut chart -->
+	<apex:outputText style="font-weight:bold" value="Win / Loss"></apex:outputText>
+	<apex:flash width="500" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Doughnut2D.swf')}?chartWidth=500&chartHeight=350" flashvars="&dataXML={!fusionChartsCurrentClosedOppTotalsAmountPieXML}"></apex:flash>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Number" columns="4">
+
+<!-- current open number sales funnel -->
+	<apex:outputText style="font-weight:bold" value="Pipeline / Funnel"></apex:outputText>	
+	<apex:flash width="250" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Funnel.swf')}?chartWidth=250&chartHeight=350" flashvars="&dataXML={!fusionChartsCurrentOpenOppTotalsNumberFunnelXML}"></apex:flash>
+
+<!-- current closed number doughnut chart -->
+	<apex:outputText style="font-weight:bold" value="Win/Loss"></apex:outputText>	
+	<apex:flash width="500" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Doughnut2D.swf')}?chartWidth=500&chartHeight=350" flashvars="&dataXML={!fusionChartsCurrentClosedOppTotalsNumberPieXML}"></apex:flash>
+
+</apex:pageBlockSection>
+
+</apex:outputPanel>
+	
+</apex:pageBlock>
+
+
+<apex:pageBlock title="Next Quarter">
+
+<apex:outputPanel rendered="{!nextQuarterCountExceeded}">
+<p>
+<apex:outputText value="Too many opportunity records to process for next quarter"></apex:outputText>
+</p>
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!NOT(nextQuarterCountExceeded)}">
+
+<apex:pageBlockSection title="Amount" columns="4">
+
+<!-- next open amount sales funnel -->
+	<apex:outputText style="font-weight:bold" value="Pipeline / Funnel"></apex:outputText>
+	<apex:flash width="250" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Funnel.swf')}?chartWidth=250&chartHeight=350" flashvars="&dataXML={!fusionChartsNextOpenOppTotalsAmountFunnelXML}"></apex:flash>
+
+<!-- next closed amount doughnut chart -->
+	<apex:outputText style="font-weight:bold" value="Win / Loss"></apex:outputText>
+	<apex:flash width="500" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Doughnut2D.swf')}?chartWidth=500&chartHeight=350" flashvars="&dataXML={!fusionChartsNextClosedOppTotalsAmountPieXML}"></apex:flash>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Number" columns="4">
+
+<!-- next open amount sales funnel -->
+	<apex:outputText style="font-weight:bold" value="Pipeline / Funnel"></apex:outputText>	
+	<apex:flash width="250" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Funnel.swf')}?chartWidth=250&chartHeight=350" flashvars="&dataXML={!fusionChartsNextOpenOppTotalsNumberFunnelXML}"></apex:flash>
+
+<!-- next closed amount doughnut chart -->
+	<apex:outputText style="font-weight:bold" value="Win / Loss"></apex:outputText>	
+	<apex:flash width="500" height="350" play="true" src="{!URLFOR($Resource.SampleFusionCharts, 'FCF_Doughnut2D.swf')}?chartWidth=500&chartHeight=350" flashvars="&dataXML={!fusionChartsNextClosedOppTotalsNumberPieXML}"></apex:flash>
+
+	
+</apex:pageBlockSection>
+
+</apex:outputPanel>
+
+</apex:pageBlock>
+ 
+</apex:page>

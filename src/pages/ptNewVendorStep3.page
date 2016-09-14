@@ -1,0 +1,44 @@
+<apex:page controller="ptNewVendorWizardController"
+    title="Vendor Sign Up" showHeader="false" standardStylesheets="true">
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="body">
+        <apex:sectionHeader title="New Customer Opportunity" subtitle="Step 3 of 3"/>
+            <apex:form >
+                <apex:pageBlock title="Confirmation">
+                    <apex:facet name="footer">
+                        <apex:outputPanel >
+                            <apex:commandButton action="{!step2}" value="Previous" styleClass="btn" />
+                            <apex:commandButton action="{!save}" value="Save" styleClass="btn" />
+                        </apex:outputPanel>
+                    </apex:facet>
+                    <apex:pageBlockSection title="Test" columns="1">
+                        <apex:outputField value="{!ptContact.Username__c}"/>
+                        <apex:outputField value="{!ptContact.Password__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Account Information">
+                        <apex:outputText value="Login ID: " />
+                        <apex:outputText value="{!ptContact.Username__c}" />
+                        <apex:outputText value="Password: " />
+                        <apex:outputText value="**********" />
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Vendor Information">
+                        <apex:outputText value="Vendor Name: " />
+                        <apex:outputText value="{!ptVendor.Name}" />
+                        <apex:outputText value="Address 1: " />
+                        <apex:outputText value="{!ptVendor.Address1__c}" />
+                        <apex:outputText value="Address 2: " />
+                        <apex:outputText value="{!ptVendor.Address2__c}" />
+                        <apex:outputText value="City: " />
+                        <apex:outputText value="{!ptVendor.City__c}" />
+                        <apex:outputText value="State: " />
+                        <apex:outputText value="{!ptVendor.State__c}" />
+                        <apex:outputText value="Zip: " />
+                        <apex:outputText value="{!ptVendor.Zip_Code__c}" />
+                        <apex:outputText value="Country: " />
+                        <apex:outputText value="{!ptVendor.Country__c}" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>

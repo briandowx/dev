@@ -1,0 +1,10 @@
+<apex:page standardController="Vendor__c">
+    <apex:form id="changeDescription">
+    <apex:pageBlock >
+        <p>Current description: {!Vendor__c.Description__c}</p>
+        <p>Change description to:</p> 
+        <apex:inputTextarea id="newDesc" value="{!Vendor__c.Description__c}"/><p/>
+        <apex:commandButton value="Save" action="{!save}"/>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

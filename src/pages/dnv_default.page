@@ -1,0 +1,8 @@
+<apex:page showheader="false" standardStylesheets="true">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:composition template="{!$Site.Template}">
+      <apex:define name="body">        
+      </apex:define>
+  </apex:composition>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

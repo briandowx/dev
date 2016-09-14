@@ -1,0 +1,36 @@
+<apex:page controller="ptNewVendorWizardController"
+    title="Vendor Sign Up" showHeader="false" standardStylesheets="true">
+    <apex:composition template="{!$Site.Template}">
+        <apex:define name="body">
+            <apex:sectionHeader title="New Vendor" subtitle="Step 1 of 3"/>
+            <apex:form >
+                <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;" />
+                <apex:pageBlock title="Customer Information">
+                    <apex:facet name="footer">
+                        <apex:commandButton action="{!step2}" value="Next" styleClass="btn"/>
+                    </apex:facet>                   
+                    <apex:pageBlockSection title="Login Information">
+                        <apex:panelGrid columns="2">                            
+                            <apex:outputLabel value="Username: " for="userName"/>
+                            <apex:inputField id="userName" value="{!ptContact.Username__c}"/>
+                            <apex:outputLabel value="Password: " for="password"/>
+                            <apex:inputSecret id="password" value="{!ptContact.Password__c}" required="true"/>
+                       </apex:panelGrid>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Contact Information">
+                        <apex:panelGrid columns="2">
+                             <apex:outputLabel value="First Name: " for="firstName"/>
+                             <apex:inputField id="firstName" value="{!ptContact.FirstName__c}"/>
+                             <apex:outputLabel value="Last Name: " for="lastName"/>
+                             <apex:inputField id="contactLastName" value="{!ptContact.LastName__c}"/>
+                             <apex:outputLabel value="Phone: " for="phone"/>
+                             <apex:inputField id="phone" value="{!ptContact.Phone__c}"/>
+                             <apex:outputLabel value="Email: " for="email"/>
+                             <apex:inputField id="email" value="{!ptContact.Email__c}"/>
+                        </apex:panelGrid>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>

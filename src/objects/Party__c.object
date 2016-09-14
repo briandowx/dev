@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>SHAPE - Party is a defined company/account in SSOT</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BEGEOID__c</fullName>
+        <description>Cisco Commerce Workplace (CCW) Channel Party ID</description>
+        <externalId>false</externalId>
+        <label>BEGEO ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRAddress1__c</fullName>
+        <description>CR Branch address 1</description>
+        <externalId>false</externalId>
+        <label>BR Address 1</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRAddress2__c</fullName>
+        <description>CR Branch address 2</description>
+        <externalId>false</externalId>
+        <label>BR Address 2</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRCity__c</fullName>
+        <description>CR Branch City</description>
+        <externalId>false</externalId>
+        <label>BR City</label>
+        <length>160</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRCountry__c</fullName>
+        <description>CR Branch Country</description>
+        <externalId>false</externalId>
+        <label>BR Country</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRDUNS__c</fullName>
+        <description>CR Branch DUNS number</description>
+        <externalId>false</externalId>
+        <label>BR DUNS</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRPartyId__c</fullName>
+        <description>CR Branch Party Id</description>
+        <externalId>false</externalId>
+        <label>BR Party ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRParty_Name__c</fullName>
+        <description>CR Branch Party Name</description>
+        <externalId>false</externalId>
+        <label>BR Party Name</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRState__c</fullName>
+        <description>CR Branch State</description>
+        <externalId>false</externalId>
+        <label>BR State</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BRZip__c</fullName>
+        <description>CR Branch Zip code</description>
+        <externalId>false</externalId>
+        <label>BR Zip</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CRPartyIdFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>CR Token Party ID flag.  If true it&apos;s a token.  Token ID will hold the token ID.  HQ Party ID will have the token ID</description>
+        <externalId>false</externalId>
+        <label>CR Party ID Flag</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Company_URL__c</fullName>
+        <description>CR HQ Company URL</description>
+        <externalId>false</externalId>
+        <label>Company URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Employees_Total__c</fullName>
+        <description>CR HQ Total Employees</description>
+        <externalId>false</externalId>
+        <label>Employees Total</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUAddress1__c</fullName>
+        <description>CR GU Party Address 1</description>
+        <externalId>false</externalId>
+        <label>GU Address 1</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUAddress2__c</fullName>
+        <description>CR GU Address 2</description>
+        <externalId>false</externalId>
+        <label>GU Address 2</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUCity__c</fullName>
+        <description>CR GU City</description>
+        <externalId>false</externalId>
+        <label>GU City</label>
+        <length>160</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUCountry__c</fullName>
+        <description>CR GU Country</description>
+        <externalId>false</externalId>
+        <label>GU Country</label>
+        <length>60</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUDUNS__c</fullName>
+        <description>CR Global Ultimate DUNS number</description>
+        <externalId>false</externalId>
+        <label>GU DUNS</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUPartyId__c</fullName>
+        <description>CR Global Ultimate Party ID</description>
+        <externalId>false</externalId>
+        <label>GU Party ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUParty_Name__c</fullName>
+        <description>CR GU Party Name</description>
+        <externalId>false</externalId>
+        <label>GU Party Name</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUState__c</fullName>
+        <description>CR GU State</description>
+        <externalId>false</externalId>
+        <label>GU State</label>
+        <length>160</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GUZip__c</fullName>
+        <description>CR GU Zip code</description>
+        <externalId>false</externalId>
+        <label>GU Zip</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Ultimate_DUNS__c</fullName>
+        <description>CR HQ Global Ultimate DUNS number</description>
+        <externalId>false</externalId>
+        <label>Global Ultimate DUNS</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Group parent of Party</description>
+        <externalId>false</externalId>
+        <label>Group Name</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Parties</relationshipLabel>
+        <relationshipName>Parties</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HQAddress1__c</fullName>
+        <description>HQ Party Address 1</description>
+        <externalId>false</externalId>
+        <label>HQ Address_1</label>
+        <length>254</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQAddress2__c</fullName>
+        <description>HQ Party Address 2</description>
+        <externalId>false</externalId>
+        <label>HQ Address_2</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQAnnual_Revenue__c</fullName>
+        <description>CR HQ Annual Revenue</description>
+        <externalId>false</externalId>
+        <label>HQ Annual Revenue</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>HQCity__c</fullName>
+        <description>HQ City</description>
+        <externalId>false</externalId>
+        <label>HQ City</label>
+        <length>160</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQCountry__c</fullName>
+        <description>CR HQ Country</description>
+        <externalId>false</externalId>
+        <label>HQ Country</label>
+        <length>60</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQDUNS__c</fullName>
+        <description>CR HQ DUNS Number</description>
+        <externalId>false</externalId>
+        <label>HQ DUNS</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQParty_Id__c</fullName>
+        <description>Unique Party ID from Cisco CR</description>
+        <externalId>true</externalId>
+        <label>HQ Party ID</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>HQState__c</fullName>
+        <description>CR HQ State</description>
+        <externalId>false</externalId>
+        <label>HQ State</label>
+        <length>160</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HQZip__c</fullName>
+        <description>CR HQ Zip Codes</description>
+        <externalId>false</externalId>
+        <label>HQ Zip</label>
+        <length>30</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Of_Business__c</fullName>
+        <description>CR HQ Line of Business</description>
+        <externalId>false</externalId>
+        <label>Line Of Business</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PCS_Total__c</fullName>
+        <description>CR HQ total number of PCs</description>
+        <externalId>false</externalId>
+        <label>PC Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partner_Phone__c</fullName>
+        <description>Cisco Commerce Workplace (CCW) Partner phone</description>
+        <externalId>false</externalId>
+        <label>Partner Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Status__c</fullName>
+        <description>Partner signup status</description>
+        <externalId>false</externalId>
+        <label>Partner Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Commission - Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commission - Fully Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commission - Fully Functional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commission - Pending w Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale - Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale - Fully Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale - Fully Functional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale - Pending w Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resale - Pending w WebEx</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Type__c</fullName>
+        <description>Type of Partner</description>
+        <externalId>false</externalId>
+        <label>Partner Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Alliance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legacy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unified Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Party_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Party Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Primary_SIC__c</fullName>
+        <description>CR HQ Primary SIC</description>
+        <externalId>false</externalId>
+        <label>Primary SIC</label>
+        <length>254</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TokenId__c</fullName>
+        <description>CR Token ID</description>
+        <externalId>false</externalId>
+        <label>Token ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Party</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Group__c</columns>
+        <columns>HQParty_Id__c</columns>
+        <columns>NAME</columns>
+        <columns>HQAddress1__c</columns>
+        <columns>HQCity__c</columns>
+        <columns>HQState__c</columns>
+        <columns>HQCountry__c</columns>
+        <columns>HQZip__c</columns>
+        <columns>HQDUNS__c</columns>
+        <columns>BEGEOID__c</columns>
+        <columns>CRPartyIdFlag__c</columns>
+        <columns>TokenId__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>HQ Party Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Parties</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

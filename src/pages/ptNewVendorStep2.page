@@ -1,0 +1,45 @@
+<apex:page controller="ptNewVendorWizardController"
+    title="Vendor Sign Up" showHeader="false" standardStylesheets="true">
+    <apex:composition template="{!$Site.Template}">        
+        <apex:define name="body">
+            <apex:form >
+            <apex:messages id="error" styleClass="errorMsg" layout="table" style="margin-top:1em;" />
+                <apex:pageBlock title="Vendor Information">
+                    <apex:facet name="footer">
+                        <apex:outputPanel >
+                            <apex:commandButton action="{!step1}" value="Previous" styleClass="btn"/>                        
+                            <apex:commandButton action="{!step3}" value="Next" styleClass="btn"/>                        
+                        </apex:outputPanel>
+                    </apex:facet>                    
+                    <apex:pageBlockSection title="Geo Location">
+                        <apex:panelGrid columns="2">
+                            <apex:outputLabel value="Vendor Name: " for="vendorName"/>
+                            <apex:inputField id="userName" value="{!ptVendor.Name}"/>
+                            <apex:outputLabel value="Address: " for="address1"/>
+                            <apex:inputField id="address1" value="{!ptVendor.Address1__c}" />
+                            <apex:outputLabel value="Address: " for="address2"/>
+                            <apex:inputField id="address2" value="{!ptVendor.Address2__c}" />
+                            <apex:outputLabel value="City " for="city"/>
+                            <apex:inputField id="city" value="{!ptVendor.City__c}" />
+                            <apex:outputLabel value="State: " for="state"/>
+                            <apex:inputField id="state" value="{!ptVendor.State__c}" />
+                            <apex:outputLabel value="Zip: " for="zip"/>
+                            <apex:inputField id="zip" value="{!ptVendor.Zip_Code__c}" />
+                            <apex:outputLabel value="Country: " for="country"/>
+                            <apex:inputField id="country" value="{!ptVendor.Country__c}" />
+                            
+                       </apex:panelGrid>
+                    </apex:pageBlockSection>
+                    <!--    
+                    <apex:pageBlockSection title="Description">
+                        <apex:panelGrid columns="2">
+                            <apex:outputLabel value="Description: " for="desc" />
+                            <apex:inputField id="desc" value="{!ptVendor.Description__c}" />
+                        </apex:panelGrid>
+                    </apex:pageBlockSection>                    
+                    -->
+                </apex:pageBlock>                   
+            </apex:form>
+        </apex:define>            
+    </apex:composition>
+</apex:page>

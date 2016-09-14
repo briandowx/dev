@@ -1,0 +1,211 @@
+<!--
+//Copyright (c) 2009, Mark Sivill, Sales Engineering, Salesforce.com Inc.
+//All rights reserved.
+//
+//Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+//Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 
+//Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+//Neither the name of the salesforce.com nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. 
+//THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+//INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+//SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+//LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
+//CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, 
+//EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+//
+// History
+//
+// Version	Date			Author			Comments
+// 1.0		20-03-2009		Mark Sivill		Initial version
+// 1.1		05-04-2009		Mark Sivill		Updates with version 1.5 changes
+//
+//
+// Overview
+//
+// Set up instructions
+//
+-->
+
+<apex:page title="Sales Funnel Setup">
+
+<apex:sectionHeader title="Sales Pipeline / Funnel Setup" subtitle=""></apex:sectionHeader>
+
+<apex:pageBlock title="Setup Instructions">
+
+<apex:pageBlockSection title="Add 'Sales Funnel' tab to an application" columns="1">
+<ol>
+<li>Click Setup -> App Setup -> Create -> Apps.</li>
+<li>Click 'Edit' on the application where the 'Sales Funnel' tab needs to go.</li>
+<li>Highlight 'Sales Funnel' from the 'Available Tabs' then click on the 'Add' button.</li>
+<li>Click Save.</li>
+<li>Repeat above steps for other applications where the 'Sales Funnel' will be added.</li>
+</ol>
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock title="FusionCharts">
+
+<apex:pageBlockSection title="FusionCharts Free" columns="1">
+<p>
+The charts within the Visualforce page are rendered using a flash component written by FusionCharts.
+The Visualforce page uses the <a href="http://www.fusioncharts.com/free">FusionCharts Free</a> funnel and doughnut charts.
+</p>
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+
+<apex:pageBlock title="Changing Sales Funnel">
+<p>
+By default sales funnel works a specific way that may not meet an organisations requirements for example the sales funnel -
+</p>
+<ul>
+<li>Displays all opportunities in organisation and not by a users visibility.</li>
+<li>Displays all opportunities regardless of opportunity record type.</li>
+<li>Sometimes concatenates text values for long stage names on the doughnut charts.</li>
+<li>Rounds values in the funnel and doughnut charts values.</li>
+</ul>
+<p>
+These can be changed to meet an organisations requirements by going through the following steps -
+</p>
+<p>
+&nbsp;
+</p>
+
+<apex:pageBlockSection title="Visibility across all opportunities" columns="1">
+<p>
+To change the default behaviour from displaying all opportunities in the organisation to a users visible opportunities do the following -
+</p>
+<ul>
+<li>Navigate the apex controller that sits behind the visualforce page SalesPipelineFunnelController. Click Setup -> App Setup ->Develop -> Apex Classes, then click 'Edit' on SalesPipelineFunnelController.</li>
+<li>Change 'without sharing' to 'with sharing', which is on the first line of code (not a comment).</li>
+<li>Click 'Save' button.</li>
+</ul>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Record Types" columns="1">
+<p>
+To create a sales funnel per record type then change each SOQL statement where clause needs to have
+"AND  o.RecordTypeId = 'x'" where x is the id of the record type that is to be reported on. There are 4 SOQL statements that would need to be changed (2 static and 2 dynamic).
+</p>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Concatenated stage names on doughnut chart" columns="1">
+<p>
+In the visualforce page SalesPipelineFunnel locate the apex flash tag for the doughnut charts (there are 4 in total), the width of the chart is defined in 2 places (currently set to 500) increase this number in both places on the line to the required number.
+</p>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Changing precision" columns="1">
+<p>
+The sales funnel will round values so a 89900 pound amount will appear as 90K in the doughnut chart (as decimal precision is set to 0).
+To change this behaviour the decimal precision can to be changed in the following methods in the SalesPipelineFunnelController -
+</p>
+<ul>
+<li>createFusionChartsAmountFunnelXML</li>
+<li>createFusionChartsPieAmountXML</li>
+<li>createFusionChartsNumberFunnelXML</li>
+<li>createFusionChartsPieNumberXML</li>
+</ul>
+
+<p>
+In the first line of these methods change the number from 0 (after the decimalPrecision value) to the required decimal precision.
+</p>
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:pageBlock title="Version History">
+
+<apex:pageBlockSection title="1.5.0" columns="1">
+<p>
+Multi-currency is now supported, Sales Funnel will work in both orgs that have and have not got multi-currency setup.
+</p>
+<p>
+Currency conversion amounts are reported against the corporate currency and are based on current currency conversions and not dated (historic) exchange rates.
+</p>
+<p>
+If the org is Multi-currency it will only be able to report on up to 4899 opportunities (records) per quarter as opposed to 4999 opportunities (records) per quarter. 
+</p>
+
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="1.4.0" columns="1">
+<p>
+Summary of changes -
+</p>
+<ul>
+<li>Added this tab to provide pointers on how to change the sales funnel.</li>
+<li>Made doughnut chart wider, as long stage names could be concatenated (very long names could still be concatenated).</li>
+<li>When there is no data available an empty/white funnel/doughnut chart is shown instead of text. Which also removes "Invalid XML Data" message when no data was available for the funnel charts.</li>
+<li>Increased the number of opportunity records that can now be queried for sales funnel to 4999 per quarter (so up to 9998 records in total). Before there was a limit of 999 opportunity records per chart.</li>
+<li>Decreased number of SOQL statements from 4 to 2. So if 4999 opportunity record limit is exceeded for either quarter no information will be displayed for that quarter.</li>
+<li>Some renaming/refactoring of classes and visualforce pages.</li>
+<li>Message displayed when the org has multi-currency set up, no charts will be shown.</li>
+</ul>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="1.3.0" columns="1">
+<p>
+Fixes issue when graph is not displayed correctly (stage name amounts/numbers are combined) when more than one stage has the same probability. Stages with same probability may not always be displayed in same order as created in stage name, workaround is to ensure stages have different probability's, or rename stages.
+</p>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="1.2.0" columns="1">
+<p>
+Fixes "Inline query has too many rows for direct assignment" error. Issue only happened when any of the graphs query more than 999 records. The limit has been increased to 4999 records across a quarter in version 1.4.0.
+</p>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="1.1.0" columns="1">
+<p>
+Fixes "de-reference a null object" issue. Issue only happened when opportunities had no amount set.
+</p>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+
+<apex:pageBlock title="Appexchange Test Drive changes">
+
+<apex:pageBlockSection title="Sales Funnel Setup" columns="1">
+<p>
+This tab is now exposed to provide help for people using the Sales Funnel.
+</p>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Reports" columns="1">
+<p>
+The reports tab is now exposed in the "Test Drive" and two reports have been written to show the opportunity summary for this quarter and the next quarter. This shows that data between 'standard' reports and the sales funnel are consistent.
+</p>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+<apex:pageBlock title="Known Issues">
+
+<apex:pageBlockSection title="4899/4999 opportunity records limit per quarter" columns="1">
+<p>
+There is a 4999 opportunity (record) limit per quarter for non multi-currency orgs and 4899 limit on multicurrency orgs. If this limit is exceeded then no information is displayed for the quarter.
+</p>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Multi currency" columns="1">
+<p>
+Multi-currency conversions are calculated using the current exchange rates and not and dated/historic rates. This means that the Sales Funnel may return slightly different results compared to opportunity reports as they are calculated using dated/historic exchange rates.
+</p>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+</apex:page>

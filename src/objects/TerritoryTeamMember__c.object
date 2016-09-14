@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>SHAPE - Contains logical many-to-many mapping between Owner (Agent/User) and Territory
+. 1 agent can own multiple territories
+. A territory cannot map to multiple AM role, but can map to other roles</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Additional CAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AS Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AS Order Desk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AS Order Sales Rep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat/Hotline Rep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cisco Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iSales Rep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manager Channel Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Program Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Sales Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regional Sales Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Development Rep (ROW Only)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systems Engineer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systems Engineer Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WebEx Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TerritoryId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to Territory table</description>
+        <externalId>false</externalId>
+        <label>Territory ID</label>
+        <referenceTo>Territory__c</referenceTo>
+        <relationshipLabel>Territory Teams</relationshipLabel>
+        <relationshipName>Territory_Teams</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UserId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to User object</description>
+        <externalId>false</externalId>
+        <label>User ID</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Territory_Teams</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Territory Team</label>
+    <nameField>
+        <displayFormat>TO{0000}</displayFormat>
+        <label>Territory Team Record</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Territory Teams</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Territory_Team_Role</fullName>
+        <active>true</active>
+        <description>Require Role to have value on Save event</description>
+        <errorConditionFormula>ISPICKVAL(Role__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Role__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Territory_Team_User</fullName>
+        <active>true</active>
+        <description>Require User ID to be selected</description>
+        <errorConditionFormula>OR(ISNULL( UserId__c), ISBLANK(UserId__c))</errorConditionFormula>
+        <errorDisplayField>UserId__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Territory_Team_territoryName</fullName>
+        <active>true</active>
+        <description>Make Territory Name a required field</description>
+        <errorConditionFormula>OR(ISNULL( TerritoryId__c), ISBLANK(TerritoryId__c))</errorConditionFormula>
+        <errorDisplayField>TerritoryId__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+</CustomObject>

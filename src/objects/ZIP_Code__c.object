@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represent a ZIP code</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Area_Code__c</fullName>
+        <description>Phone area code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone area code</inlineHelpText>
+        <label>Area Code</label>
+        <length>160</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>City</description>
+        <externalId>false</externalId>
+        <inlineHelpText>City</inlineHelpText>
+        <label>City</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <description>2 letter country code base ISO standard</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter two letter country code ISO standard</inlineHelpText>
+        <label>Country Code</label>
+        <length>2</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>Full name of a country</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter full name of a country. Example: United States</inlineHelpText>
+        <label>Country</label>
+        <length>60</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <description>The County name for US addresses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The County name for US addresses</inlineHelpText>
+        <label>County</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FIPS__c</fullName>
+        <description>FIPS 10-4 Region Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>FIPS 10-4 Region Code</inlineHelpText>
+        <label>FIPS</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <description>Latitude coordinate of a zip code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Latitude coordinate of a zip code</inlineHelpText>
+        <label>Latitude</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>7</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <description>Longitude coordinate of a zip code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Longitude coordinate of a zip code</inlineHelpText>
+        <label>Longitude</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>7</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>Territory Region name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Territory Region name</inlineHelpText>
+        <label>Region</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Code__c</fullName>
+        <description>Abbreviation of State name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Abbreviation of the State name.  Example: CA for California</inlineHelpText>
+        <label>State Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>Full name of a state or province</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter full name of State of Province</inlineHelpText>
+        <label>State</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Zone_Text__c</fullName>
+        <description>Time zone in text</description>
+        <externalId>false</externalId>
+        <label>Time Zone</label>
+        <length>254</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Zone__c</fullName>
+        <description>Time zone denomination relative to GMT</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time zone denomination relative to GMT</inlineHelpText>
+        <label>Time Zone</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Type of ZIP code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Type of ZIP code</inlineHelpText>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Military</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PO Box Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unique</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>ZIP Code</label>
+    <nameField>
+        <label>ZIP Code</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ZIP Codes</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

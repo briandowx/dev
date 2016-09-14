@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>SHAPE - Territories are aligned to AM as a define owner.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Share_Node_Id__c</fullName>
+        <description>Cisco SHARE Node ID</description>
+        <externalId>false</externalId>
+        <label>Share Node ID</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Share_Node_Name__c</fullName>
+        <description>Cisco SHARE Node Name</description>
+        <externalId>false</externalId>
+        <label>Share Node Name</label>
+        <length>254</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TerritoryId__c</fullName>
+        <description>Unique ID represent each territory</description>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Territory ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Territory_Type__c</fullName>
+        <description>Type of a territory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select territory type corresponding to the territory you are creating</inlineHelpText>
+        <label>Territory Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Direct</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WebEx_Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The primary Territory owner of a territory</description>
+        <externalId>false</externalId>
+        <label>WebEx Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Territories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Territory</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>TerritoryId__c</columns>
+        <columns>NAME</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Territory_Type__c</columns>
+        <columns>Share_Node_Id__c</columns>
+        <columns>Share_Node_Name__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Territory Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Territories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>WAM_on_Territory</fullName>
+        <active>true</active>
+        <description>Require user to select a WebEx Account Manager to save a territory</description>
+        <errorConditionFormula>OR(ISNULL( WebEx_Account_Manager__c),  ISBLANK( WebEx_Account_Manager__c))</errorConditionFormula>
+        <errorDisplayField>WebEx_Account_Manager__c</errorDisplayField>
+        <errorMessage>You must enter a value</errorMessage>
+    </validationRules>
+</CustomObject>
