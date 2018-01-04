@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Use to record statistics about objects using the Clear Task Analyzer application.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CTSK_INSP__Custom_Object_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( CTSK_INSP__Custom_Object__c , &apos;Yes&apos;,&apos;No&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Used to convert the checkbox field &apos;Custom Object&apos; to text, to be used for other operations.</inlineHelpText>
+        <label>Custom Object Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Custom_Object__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the object being analyzed is a custom object.</description>
+        <externalId>false</externalId>
+        <label>Custom Object</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Last_Run__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked to identify the row created when the application was last run for this object</description>
+        <externalId>false</externalId>
+        <label>Last Run</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Number_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total number of fields in the object being analyzed</description>
+        <externalId>false</externalId>
+        <label># Fields</label>
+        <summaryForeignKey>CTSK_INSP__Field_Statistic__c.CTSK_INSP__Object_Statistic__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Number_Records__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The total number of records in the object</description>
+        <externalId>false</externalId>
+        <label># Records</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Object name from Metadata. Uses display name, not API name for custom objects</description>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Record_First_Created_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date a record of this type was first created</description>
+        <externalId>false</externalId>
+        <label>Record First Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Record_Last_Created_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date a record of this type was last created</description>
+        <externalId>false</externalId>
+        <label>Record Last Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Record_Last_Modified_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date a record of this type was last modified</description>
+        <externalId>false</externalId>
+        <label>Record Last Modified Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Request_End__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time was the request was completed.</inlineHelpText>
+        <label>Request End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Request_Start__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The time was the request was made.</inlineHelpText>
+        <label>Request Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CTSK_INSP__Request_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of minutes taken to complete the analysis. 1440 is the number of minutes in the day, which is then multiplied by the difference between the dates in order to resolve to minutes.</description>
+        <externalId>false</externalId>
+        <formula>(CTSK_INSP__Request_End__c - CTSK_INSP__Request_Start__c) * 1440</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The number of minutes taken to complete the analysis. The value is zero when processed in under a minute as the value is rounded down to the closest minute.</inlineHelpText>
+        <label>Request Time (Minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Object Statistic</label>
+    <listViews>
+        <fullName>CTSK_INSP__All</fullName>
+        <columns>NAME</columns>
+        <columns>CTSK_INSP__Object__c</columns>
+        <columns>CTSK_INSP__Number_Fields__c</columns>
+        <columns>CTSK_INSP__Number_Records__c</columns>
+        <columns>CTSK_INSP__Custom_Object__c</columns>
+        <columns>CTSK_INSP__Last_Run__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>CTSK_INSP__Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>CTSK_INSP__Object__c</columns>
+        <columns>CTSK_INSP__Number_Fields__c</columns>
+        <columns>CTSK_INSP__Number_Records__c</columns>
+        <columns>CTSK_INSP__Custom_Object__c</columns>
+        <columns>CTSK_INSP__Last_Run__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>CTSK_INSP__Last_Run</fullName>
+        <columns>NAME</columns>
+        <columns>CTSK_INSP__Object__c</columns>
+        <columns>CTSK_INSP__Number_Fields__c</columns>
+        <columns>CTSK_INSP__Number_Records__c</columns>
+        <columns>CTSK_INSP__Custom_Object__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CTSK_INSP__Last_Run__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Last Run</label>
+    </listViews>
+    <listViews>
+        <fullName>CTSK_INSP__My_Object_Statistics</fullName>
+        <columns>NAME</columns>
+        <columns>CTSK_INSP__Object__c</columns>
+        <columns>CTSK_INSP__Number_Fields__c</columns>
+        <columns>CTSK_INSP__Number_Records__c</columns>
+        <columns>CTSK_INSP__Custom_Object__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Object Statistics</label>
+    </listViews>
+    <nameField>
+        <label>Run Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Object Statistics</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>CTSK_INSP__Object__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CTSK_INSP__Custom_Object__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CTSK_INSP__Number_Records__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CTSK_INSP__Number_Fields__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CTSK_INSP__Last_Run__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CTSK_INSP__Object__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CTSK_INSP__Number_Fields__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CTSK_INSP__Number_Records__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CTSK_INSP__Custom_Object__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CTSK_INSP__Last_Run__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CTSK_INSP__Object__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CTSK_INSP__Number_Fields__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CTSK_INSP__Number_Records__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CTSK_INSP__Custom_Object__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CTSK_INSP__Last_Run__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>CTSK_INSP__Object__c</searchFilterFields>
+        <searchFilterFields>CTSK_INSP__Number_Fields__c</searchFilterFields>
+        <searchFilterFields>CTSK_INSP__Number_Records__c</searchFilterFields>
+        <searchFilterFields>CTSK_INSP__Custom_Object__c</searchFilterFields>
+        <searchFilterFields>CTSK_INSP__Last_Run__c</searchFilterFields>
+        <searchResultsAdditionalFields>CTSK_INSP__Object__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CTSK_INSP__Number_Fields__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CTSK_INSP__Number_Records__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CTSK_INSP__Last_Run__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CTSK_INSP__Custom_Object__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <webLinks>
+        <fullName>CTSK_INSP__View_Object</fullName>
+        <availability>online</availability>
+        <description>View the given object.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Object</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (&apos;{!JSENCODE( CTSK_INSP__Object_Statistic__c.CTSK_INSP__Custom_Object_Text__c )}&apos; == &apos;Yes&apos;) {
+	parent.location.href= &quot;/setup/ui/customobjects.jsp?setupid=CustomObjects&quot; ;
+} else {
+	parent.location.href=&quot;/p/setup/layout/LayoutFieldList?type={!JSENCODE(CTSK_INSP__Object_Statistic__c.CTSK_INSP__Object__c)}&quot;;
+}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,17 @@
+<p>Dear {!Lead.FirstName},</p>
+
+<p>Google provided you with personal support in order to give you a deeper knowledge of the Google AdWords Program, when you began advertising with Google.</p>
+
+<p>To help us continually improve this service, we would appreciate feedback on your experience. Please share your feedback by accessing our 3-5 minute survey here:</p>
+
+<p>%SURVEY_URL%</p>
+
+<p>And, as always, thank you for advertising with us!</p>
+
+<p>The Google AdWords Team</p>
+
+<p>Google Inc
+1600 Amphitheatre Parkway
+Mountain View, CA 94043, USA</p>
+
+<p>P.S. You received this email because you indicated that you'd like to receive AdWords market research emails. If you don't want to receive such emails, you can change your settings at your account's Notification Preferences page (https://adwords.google.com/select/EditCommunicationsPreferences -- AdWords sign-in required). To do so, select "No" in the "Email" column beside "Google Market Research."</p>

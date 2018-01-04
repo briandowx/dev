@@ -9,7 +9,7 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>DeletePhotoAction</actionName>
+        <actionName>DeleteBannerPhotoAction</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -49,15 +49,11 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>UpdatePhotoAction</actionName>
+        <actionName>UpdateBannerPhotoAction</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>UserActivationAction</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>ViewPhotoAction</actionName>
         <type>Default</type>
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>

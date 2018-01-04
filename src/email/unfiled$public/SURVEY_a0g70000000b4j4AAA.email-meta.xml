@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the default email invitation template for survey: CSAT Survey</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[Send using Timba Surveys] CSAT Survey</name>
+    <style>none</style>
+    <subject>Please complete this survey: CSAT Survey</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Google provided you with personal support in order to give you a deeper knowledge of the Google AdWords Program, when you began advertising with Google.
+
+To help us continually improve this service, we would appreciate feedback on your experience. Please share your feedback by accessing our 3-5 minute survey here:
+
+https://spreadsheets.google.com/viewform?formkey=dERVTjJ1dmN3dGhzUEFmdGhPZGpLMnc6MQ
+
+And, as always, thank you for advertising with us!
+
+The Google AdWords Team
+
+Google Inc
+1600 Amphitheatre Parkway
+Mountain View, CA 94043, USA
+
+P.S. You received this email because you indicated that you&apos;d like to receive AdWords market research emails. If you don&apos;t want to receive such emails, you can change your settings at your account&apos;s Notification Preferences page (https://adwords.google.com/select/EditCommunicationsPreferences -- AdWords sign-in required). To do so, select &quot;No&quot; in the &quot;Email&quot; column beside &quot;Google Market Research.&quot;</textOnly>
+    <type>custom</type>
+</EmailTemplate>
